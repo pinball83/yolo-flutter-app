@@ -12,7 +12,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.6.0")
+        classpath("com.android.tools.build:gradle:8.9.1")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
@@ -55,7 +55,9 @@ if (flutterRoot != null) {
 
 android {
     namespace = "com.ultralytics.yolo"
-    compileSdk = 35
+    compileSdk = 36
+    buildToolsVersion = "36.0.0"
+    ndkVersion = "28.2.13676358"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -92,8 +94,6 @@ android {
         // Supported ABIs
         ndk {
             abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
-            // NDK r28: 16KB page size support enabled by default
-            ndkVersion = "28.0.13004108"
         }
     }
     
